@@ -1,0 +1,146 @@
+openapi: 3.0.0
+info:
+  title: Simple Tax Calculator API
+  version: v1
+  description: API for calculating personal income tax based on provided parameters.
+servers:
+  - url: https://cfg-cs-product-search-49589660160.asia-southeast1.run.app
+paths:
+  /simple_tax_calculator:
+    post:
+      summary: Calculate personal income tax
+      description: Calculates personal income tax based on monthly income, deductions, and other parameters.
+      requestBody:
+        description: Tax calculation parameters. Can be sent as JSON or query parameters.
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                monthly_income:
+                  type: integer
+                  description: Monthly income.
+                  example: 50000
+                use_personal_allowance:
+                  type: boolean
+                  description: Whether to use personal allowance.
+                  example: true
+                use_spouse_allowance:
+                  type: boolean
+                  description: Whether to use spouse allowance.
+                  example: false
+                num_children:
+                  type: integer
+                  description: Number of children.
+                  example: 2
+                insurance_premium:
+                  type: integer
+                  description: Insurance premium amount.
+                  example: 20000
+                social_security:
+                  type: integer
+                  description: Social security contribution amount.
+                  example: 9000
+              required:
+                - monthly_income
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                monthly_income:
+                  type: integer
+                  description: Monthly income.
+                  example: 50000
+                use_personal_allowance:
+                  type: string
+                  description: Whether to use personal allowance (true/false).
+                  example: "true"
+                use_spouse_allowance:
+                  type: string
+                  description: Whether to use spouse allowance (true/false).
+                  example: "false"
+                num_children:
+                  type: integer
+                  description: Number of children.
+                  example: 2
+                insurance_premium:
+                  type: integer
+                  description: Insurance premium amount.
+                  example: 20000
+                social_security:
+                  type: integer
+                  description: Social security contribution amount.
+                  example: 9000
+              required:
+                - monthly_income
+      parameters:
+        - in: query
+          name: monthly_income
+          schema:
+            type: integer
+          description: Monthly income.
+          example: 50000
+        - in: query
+          name: use_personal_allowance
+          schema:
+            type: string
+          description: Whether to use personal allowance (true/false).
+          example: "true"
+        - in: query
+          name: use_spouse_allowance
+          schema:
+            type: string
+          description: Whether to use spouse allowance (true/false).
+          example: "false"
+        - in: query
+          name: num_children
+          schema:
+            type: integer
+          description: Number of children.
+          example: 2
+        - in: query
+          name: insurance_premium
+          schema:
+            type: integer
+          description: Insurance premium amount.
+          example: 20000
+        - in: query
+          name: social_security
+          schema:
+            type: integer
+          description: Social security contribution amount.
+          example: 9000
+      responses:
+        '200':
+          description: Successful tax calculation.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total_deductions:
+                    type: string
+                    description: Total deductions amount.
+                    example: "140000.00"
+                  gross_income:
+                    type: string
+                    description: Yealy income amount.
+                    example: "460000.00"
+                  tax_to_pay:
+                    type: string
+                    description: Tax to pay amount.
+                    example: "23000.00"
+        '500':
+          description: Internal server error.
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "Error: An error occurred during tax calculation."
+        'default':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "OK"
