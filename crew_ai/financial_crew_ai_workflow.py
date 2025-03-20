@@ -4,8 +4,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.tools import DuckDuckGoSearchRun
 
 # Import Secrets
-GOOGLE_API_KEY = "AIzaSyCVlA6P38SBf06aNa7ycxwYFm9YE-kveqM" 
-# os.getenv("GOOGLE_API_KEY")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 # Tools
 search_tool = DuckDuckGoSearchRun()
