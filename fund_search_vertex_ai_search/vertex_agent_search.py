@@ -5,7 +5,7 @@ from google.cloud import discoveryengine_v1 as discoveryengine
 from google.protobuf.json_format import MessageToDict
 
 
-def vertex_search_retail_products(
+def vertex_search_fund(
     search_query: str,
 ) -> List[discoveryengine.SearchResponse]:
     #  For more information, refer to:
@@ -40,7 +40,7 @@ def vertex_search_retail_products(
             ignore_adversarial_query=True,
             ignore_non_summary_seeking_query=True,
             model_prompt_spec=discoveryengine.SearchRequest.ContentSearchSpec.SummarySpec.ModelPromptSpec(
-                preamble=""
+                preamble="ค้นหากองทุนรวม โดยให้สรุปข้อมูลสำคัญ เช่นผลประกอบการ ความเสี่ยง สรุปข้อมูลสำคัญ เป็นภาษาไทย",
             ),
             model_spec=discoveryengine.SearchRequest.ContentSearchSpec.SummarySpec.ModelSpec(
                 version="stable",

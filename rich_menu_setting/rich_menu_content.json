@@ -1,0 +1,59 @@
+{
+    "size": {
+        "width": 2500,
+        "height": 1686
+    },
+    "selected": true,
+    "name": "Beat Financial Rich Menu",
+    "chatBarText": "Menu",
+    "areas": [
+        {
+            "bounds": {
+                "x": 17,
+                "y": 25,
+                "width": 2442,
+                "height": 920
+            },
+            "action": {
+                "type": "message",
+                "text": "สวัสดีคะ"
+            }
+        },
+        {
+            "bounds": {
+                "x": 41,
+                "y": 994,
+                "width": 759,
+                "height": 652
+            },
+            "action": {
+                "type": "message",
+                "text": "ฉันต้องการวางแผนเกษียณ"
+            }
+        },
+        {
+            "bounds": {
+                "x": 866,
+                "y": 974,
+                "width": 768,
+                "height": 680
+            },
+            "action": {
+                "type": "message",
+                "text": "#analyse_ข่าวการเงิน"
+            }
+        },
+        {
+            "bounds": {
+                "x": 1700,
+                "y": 978,
+                "width": 775,
+                "height": 689
+            },
+            "action": {
+                "type": "message",
+                "text": "ฉันต้องการคำณวนภาษีส่วนบุคคล"
+            }
+        }
+    ]
+}

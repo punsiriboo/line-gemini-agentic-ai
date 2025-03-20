@@ -46,7 +46,16 @@ def create_ai_financial_news_workflow():
         that highlights the most significant financial news.
         The summary should be informative yet accessible, catering to a financially savvy audience.
         Ensure clarity and conciseness.""",
-        expected_output="Python Dictionanry of Summary Title and Comprehensive financial news summary of at least 2 paragraphs",
+        expected_output="""Python Dictionanry of Summary Title and Comprehensive financial news summary of at least 4 paragraphs.
+        The summary should be informative yet accessible, catering to a financially savvy audience.
+        Ensure clarity and conciseness.
+        
+        Result Example:
+        {
+            "title": "Financial News Summary - 2025",
+            "summary": "The financial markets in 2025 have been marked by significant volatility..."
+        }
+        """,
         agent=writer
     )
 
