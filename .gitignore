@@ -144,3 +144,4 @@ cython_debug/
 .vscode/
 
 init.sh
+secret.yml

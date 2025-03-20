@@ -182,3 +182,9 @@ yarl==1.9.4
 youtube-transcript-api==0.6.2
 yt-dlp==2023.12.30
 zipp==3.18.1
+functions-framework==3.*
+requests==2.*
+Werkzeug==3.1.*
+google-auth==2.*
+google-cloud-secret-manager==2.22.*
+google-cloud-logging
